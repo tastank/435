@@ -18,11 +18,11 @@
     \item The minimum block length is 2.
 
     %2
-    \item To decrypt this text we need the inverse of the encryption matrix, or
+    \item To decrypt this text we need the inverse of the encryption matrix, 
         $$\begin{bmatrix*}[c]
             9  & 2 \\
             13 & 3
-          \end{bmatrix*}^{-1}
+        \end{bmatrix*}^{-1}
           \equiv
           \begin{bmatrix*}
              3 & 24 \\
@@ -30,6 +30,75 @@
           \end{bmatrix*}
           \pmod {26}
         $$
+        Now we can left multiply our ciphertext (converted into column vectors) by the decryption matrix, to obtain plaintext vectors.
+        $$\begin{bmatrix*}
+            Y\\I
+          \end{bmatrix*}
+          \equiv
+          \begin{bmatrix*}
+            24\\8
+          \end{bmatrix*}
+          ;
+          \begin{bmatrix*}
+            F\\Z
+          \end{bmatrix*}
+          \equiv
+          \begin{bmatrix*}
+            5\\25
+          \end{bmatrix*}
+          ;
+          \begin{bmatrix*}
+            M\\A
+          \end{bmatrix*}
+          \equiv
+          \begin{bmatrix*}
+            12\\0
+          \end{bmatrix*}
+        $$
+        $$
+          \begin{bmatrix*}
+             3 & 24 \\
+            13 &  9
+          \end{bmatrix*}
+          \times
+          \begin{bmatrix*}
+            24\\8
+          \end{bmatrix*}
+          \equiv
+          \begin{bmatrix*}
+            4\\20
+          \end{bmatrix*}\pmod {26}
+        $$
+        $$
+          \begin{bmatrix*}
+             3 & 24 \\
+            13 &  9
+          \end{bmatrix*}
+          \times
+          \begin{bmatrix*}
+            5\\25
+          \end{bmatrix*}
+          \equiv
+          \begin{bmatrix*}
+           17\\4
+          \end{bmatrix*}\pmod {26}
+        $$
+        $$
+          \begin{bmatrix*}
+             3 & 24 \\
+            13 &  9
+          \end{bmatrix*}
+          \times
+          \begin{bmatrix*}
+            12\\0
+          \end{bmatrix*}
+          \equiv
+          \begin{bmatrix*}
+           10\\0
+          \end{bmatrix*}\pmod {26}
+        $$
+
+        So our plaintext message is encoded as \{4, 20, 17, 4, 10, 0\} which corresponds to EUREKA.
 
     %3
     \item
