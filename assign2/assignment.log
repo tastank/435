@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.9.8)  22 SEP 2015 17:10
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.9.8)  22 SEP 2015 17:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -374,13 +374,13 @@ p/pdftex.map}
 
 ] (./assignment.aux) ) 
 Here is how much of TeX's memory you used:
- 3442 strings out of 493629
- 49368 string characters out of 3134964
- 115451 words of memory out of 3000000
- 6697 multiletter control sequences out of 15000+200000
- 8285 words of font info for 32 fonts, out of 3000000 for 9000
+ 3444 strings out of 493629
+ 49389 string characters out of 3134964
+ 117451 words of memory out of 3000000
+ 6698 multiletter control sequences out of 15000+200000
+ 8454 words of font info for 33 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 38i,10n,43p,259b,194s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,10n,43p,259b,243s stack positions out of 5000i,500n,10000p,200000b,50000s
 </afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmex10.pfb></afs/cs.wisc.edu/s/texlive-2011/amd64
 _rhel5/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></afs/cs.wisc.edu/s
@@ -388,11 +388,12 @@ _rhel5/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></afs/cs.wisc.edu/s
 /afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmr8.pfb></afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmsy10.pfb></afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on assignment.pdf (1 page, 56081 bytes).
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></afs/cs.wisc.edu/s/texliv
+e-2011/amd64_rhel5/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on assignment.pdf (1 page, 64345 bytes).
 PDF statistics:
- 32 PDF objects out of 1000 (max. 8388607)
- 22 compressed objects within 1 object stream
+ 36 PDF objects out of 1000 (max. 8388607)
+ 25 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
