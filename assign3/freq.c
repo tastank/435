@@ -9,9 +9,6 @@ int main(int argc, char **argv) {
         return -1;
     }
 
-    printf("%s", argv[1]);
-    return 0;
-
     int freqs[NUMCHARS];
 
     for (int i = 0; i < NUMCHARS; i++) {
@@ -19,8 +16,16 @@ int main(int argc, char **argv) {
     }
 
     char c = argv[1][0];
+    int i = 0;
     while (c != '\0') {
+        freqs[(int)c]++;
+        c = argv[1][++i];
+    }
 
+    for (int i = 0; i < NUMCHARS; i++) {
+        if (0 != freqs[i]) {
+            printf("%c: %d\n", (char)i, freqs[i]);
+        }
     }
 
 }
