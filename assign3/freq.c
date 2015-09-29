@@ -24,7 +24,7 @@ int main(int argc, char **argv) {
 
     for (int i = 0; i < NUMCHARS; i++) {
         if (0 != freqs[i]) {
-            printf("%c: %d\n", (char)i, freqs[i]);
+            printf("%c -- %d\n", (char)i, freqs[i]);
         }
     }
 
