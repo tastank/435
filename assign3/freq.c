@@ -22,10 +22,24 @@ int main(int argc, char **argv) {
         c = argv[1][++i];
     }
 
+    int length = i;
+    int distinct = 0;
+    float index_of_coincidence;
+    int index_of_coincidence_numerator = 0;
+
+    printf("Total number of chars: %d\n", i);
+
     for (int i = 0; i < NUMCHARS; i++) {
         if (0 != freqs[i]) {
-            printf("%c -- %d\n", (char)i, freqs[i]);
+            printf("%c -- %d\t%f\n", (char)i, freqs[i], (float)freqs[i]/length);
+            index_of_coincidence_numerator += freqs[i] * (freqs[i] - 1);
+            distinct++;
         }
     }
+
+    index_of_coincidence = (float)index_of_coincidence_numerator / (length*(length - 1));
+    printf("Index of coincidence: %f\n", index_of_coincidence);
+
+
 
 }
