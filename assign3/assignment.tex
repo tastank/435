@@ -1,8 +1,8 @@
-\documentclassp[12pt,letterpaper]{article}
+\documentclass[12pt,letterpaper]{article}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
-\usepackage[marghin=3cm]{geometry}
+\usepackage[margin=3cm]{geometry}
 \usepackage{fancyhdr}
 \usepackage{mathtools}
 \begin{document}
@@ -16,6 +16,34 @@
 
     %1
     \item
+        For this problem, a shorthand notation is used in which ciphertext is capitalized (e.g. RSZWO) and plaintext is lowercase (e.g. <plaintextexample>).\\\\
+        A frequency analysis program written in C tells us the frequency distribution is as follows:\\
+            B -- 2\\
+            C -- 18\\
+            D -- 7\\ 
+            G -- 13\\
+            H -- 11\\
+            J -- 3\\
+            K -- 6\\
+            L -- 1\\
+            N -- 13\\
+            O -- 18\\
+            P -- 14\\
+            Q -- 2\\
+            R -- 11\\
+            S -- 16\\
+            T -- 3\\
+            V -- 7\\
+            W -- 11\\
+            X -- 5\\
+            Y -- 4\\
+            Z -- 19\\
+        Six letters were not used: A, E, F, I, M, U.
+        We thus replace Z with e, as Z is most common in the ciphertext and e most common in English plaintext.
+        A little intuition tells us `the' is a common word with which to start a phrase, and more observation that `th' and `he' are the most common bigrams in English - which are both supported by replacing R with t and S with h (as RS and SZ are both common in the ciphertext).
+        Reusing this concept, we find W occurs after e 7 of e's 19 occurrences - leading us to believe it must be r.
+        
+
 
     %2
     \item
