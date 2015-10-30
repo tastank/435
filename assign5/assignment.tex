@@ -5,6 +5,7 @@
 \usepackage[margin=3cm]{geometry}
 \usepackage{fancyhdr}
 \usepackage{mathtools}
+\usepackage{verbatim}
 \begin{document}
 
 \pagestyle{fancy}
@@ -19,15 +20,70 @@
     A little playing around shows $c_0 = 1, c_1 = 0, c_2 = 1$.  The LFSR bits are then as follows:
     \begin{verbatim}
         010
-        001
         100
-        110
-        111
+        001
         011
+        111
+        110
     \end{verbatim}
 
     %2
     \item
+    An LFSR of length $i$ produces at most $2^i-1$ output bits before restarting a cycle and the period of this LFSR's output is 21, so we need an LFSR function of length 5.
+    Thus, we can set up our system of equations as follows:
+    \begin{comment}
+    \[
+    \begin{cases}
+        x_6 = c_1 x_5 + c_2 x_4 + c_3 x_3 + c_4 x_2 + c_5 x_1\\
+        x_7 = c_1 x_5 + c_2 x_4 + c_3 x_3 + c_4 x_2 + c_5 x_1\\
+        x_8 = c_1 x_5 + c_2 x_4 + c_3 x_3 + c_4 x_2 + c_5 x_1\\
+        x_9 = c_1 x_5 + c_2 x_4 + c_3 x_3 + c_4 x_2 + c_5 x_1\\
+        x_{10} = c_1 x_5 + c_2 x_4 + c_3 x_3 + c_4 x_2 + c_5 x_1\\
+        x_{11} = c_1 x_5 + c_2 x_4 + c_3 x_3 + c_4 x_2 + c_5 x_1\\
+    \end{cases}
+    \]
+    \end{comment}
+    \[
+    \left\{
+        \setlength\arraycolsep{2pt}
+        \begin{array}{ l @{{}={}} l c l c l c l c l }
+        x_6    & c_1 x_5    &+& c_2 x_4 &+& c_3 x_3 &+& c_4 x_2 &+& c_5 x_1\\
+        x_7    & c_1 x_6    &+& c_2 x_5 &+& c_3 x_4 &+& c_4 x_3 &+& c_5 x_2\\
+        x_8    & c_1 x_7    &+& c_2 x_6 &+& c_3 x_5 &+& c_4 x_4 &+& c_5 x_3\\
+        x_9    & c_1 x_8    &+& c_2 x_7 &+& c_3 x_6 &+& c_4 x_5 &+& c_5 x_4\\
+        x_{10} & c_1 x_9    &+& c_2 x_8 &+& c_3 x_7 &+& c_4 x_6 &+& c_5 x_5\\
+        \end{array}
+        \right.
+    \]
+    Substituting values from the beginning of the LFSR ($x_1 = 0, x_2 = 0, x_3=1, ...$), we get the following easily solvable system:
+    \[
+    \left\{
+        \setlength\arraycolsep{2pt}
+        \begin{array}{ l @{{}={}} lclclclcl }
+        0      & c_1  0     &+& c_2  0  &+& c_3  1  &+& c_4  0  &+& c_5  0 \\
+        0      & c_1  0     &+& c_2  0  &+& c_3  0  &+& c_4  1  &+& c_5  0 \\
+        1      & c_1  0     &+& c_2  0  &+& c_3  0  &+& c_4  0  &+& c_5  1 \\
+        1      & c_1  1     &+& c_2  0  &+& c_3  0  &+& c_4  0  &+& c_5  0 \\
+        1      & c_1  1     &+& c_2  1  &+& c_3  0  &+& c_4  0  &+& c_5  0 \\
+        \end{array}
+        \right.
+    \]
+
+    The first four equations each tell us the value of one variable: $c_3 = c_4 = 0, c_1 = c_5 = 1$, so we only need to solve for $c_2$.  This can be done easily enough by substituting the values for the other four variables into the fifth equation.  This yields
+    $$1 + c_2 + 0 + 0 + 0 = 1$$
+    so we can see easily that $c_2 = 0$.
+    Our solution then is
+    \[
+    \left\{
+        \begin{array}{ l @{{}={}} l }
+        c_1 & 1\\
+        c_2 & 0\\
+        c_3 & 0\\
+        c_4 & 0\\
+        c_5 & 1\\
+        \end{array}
+        \right.
+    \]
 
     %3
     \item
