@@ -1,5 +1,6 @@
 #include <cstdlib>
 #include <cstdio>
+#include <cstring>
 
 
 #define NUM_STRINGS 13
@@ -15,7 +16,7 @@ int min(int, int);
 int main(int argc, char *argv[]) {
 
     //xor infilename wordlist outfilename
-    if (argc != 2) {
+    if (argc != 3) {
 //    if (argc != 4) {
         printf("Wrong number of args.\n");
         printf("Xor infile wordlist outfile\n");
@@ -23,8 +24,8 @@ int main(int argc, char *argv[]) {
     }
 
     //open the input file to read it
-    FILE *fp = fopen(argv[1], "r");
-    if (fp == NULL) {
+    FILE *cipher_file = fopen(argv[1], "r");
+    if (cipher_file == NULL) {
         printf("Couldn't open file; wrong filename?\n");
         return -1;
     }
@@ -38,7 +39,7 @@ int main(int argc, char *argv[]) {
     for (int i = 0; i < NUM_STRINGS; i++) {
         input[i] = new char[STR_LENGTH];
         //assume there's no error here, because this isn't for anyone else to use
-        input[i] = fgets(input[i], STR_LENGTH, fp);
+        input[i] = fgets(input[i], STR_LENGTH, cipher_file);
         if (!is_hex_digit(input[i][0])) {
             useful[i] = false;
         } else {
@@ -71,10 +72,6 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    for (int i = 0; i < NUM_STRINGS; i++) {
-        delete[] input[i];
-    }
-    delete[] input;
 
     //get number of useful rows, so we can calculate how many XORs to do
     int num_useful = count_true(useful, NUM_STRINGS);
@@ -121,21 +118,35 @@ int main(int argc, char *argv[]) {
     }
 
 
-
     // Now we have a collection of (1) byte arrays and (2) XOR'd byte arrays
     // We're done with the input file, so close it
-    fclose(fp);
-
-
+    fclose(cipher_file);
     // Let's do some analysis!
-    fp = fopen(argv[2], "r");
+
+
+
+
+
+
 
 #define MAX_WORDLENGTH 64
 #define NUM_WORDS 10000
+
+    FILE *wordlist_file = fopen(argv[2], "r");
+
+
+    printf("Hello");
+
+    //Idea: XOR the XOR against a wordlist, and if one of the words that appears
+    //      appears also in our wordlist, we've found a word in one of the strings
+    //      that were XOR'd in that XOR.
+    // Words is the same list as words, but with the first char capitalized
     char **words = new char*[NUM_WORDS];
+    char **Words = new char*[NUM_WORDS];
     for (int i = 0; i < NUM_WORDS; i++) {
         words[i] = new char[MAX_WORDLENGTH];
-        fgets(words[i], MAX_WORDLENGTH, fp);
+        Words[i] = new char[MAX_WORDLENGTH];
+        fgets(words[i], MAX_WORDLENGTH, cipher_file);
 
         //remove trailing '\n' from every string
         //and make sure it is null-terminated
@@ -144,7 +155,10 @@ int main(int argc, char *argv[]) {
             if (words[i][c] == '\n') {
                 words[i][c] = '\0';
             }
+            //YEEAAAHHHH!!!!!
+            c++;
         } while (words[i][c] != '\0');
+        strncpy(Words[i], words[i], strlen(words[i]));
     }
 
 
@@ -161,6 +175,15 @@ int main(int argc, char *argv[]) {
 
 
 
+
+
+
+
+
+
+
+
+    fclose(wordlist_file);
 
 
 
@@ -171,12 +194,15 @@ int main(int argc, char *argv[]) {
 
 
     for (int i = 0; i < NUM_STRINGS; i++) {
+        delete[] input[i];
         delete[] bytes[i];
     }
-    for (int i = 0; i < num_xors; i++) {
-        delete[] xor_desc;
-    }
+    delete[] input;
     delete[] bytes;
+    for (int i = 0; i < num_xors; i++) {
+        delete[] xor_desc[i];
+    }
+    delete[] xor_desc;
     delete[] useful;
     return 0;
 }
