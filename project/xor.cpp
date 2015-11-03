@@ -102,7 +102,7 @@ int main(int argc, char *argv[]) {
     //print the XOR'd strings to make sure I'm doing it right
     for (int i = 0; i < num_xors; i++) {
         for (int j = 0; j < xor_length[i]; j++) {
-            printf("%x ", xors[i][j]);
+            printf("%02x ", xors[i][j]);
         }
         printf("\n");
     }
