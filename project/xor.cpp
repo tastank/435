@@ -4,6 +4,7 @@
 
 #define NUM_STRINGS 13
 #define STR_LENGTH  256
+#define DESC_LENGTH 6
 
 bool is_hex_digit(char);
 unsigned char get_char_from_hex_str(char *);
@@ -77,6 +78,7 @@ int main(int argc, char *argv[]) {
     //where n is the number of useful rows
     int num_xors = num_useful * (num_useful + 1) / 2;
     unsigned char ** xors = new unsigned char*[num_xors];
+    char **xor_desc = new char*[num_xors];
     int *xor_length = new int[num_xors];
 
     int xor_it = 0;
@@ -87,6 +89,9 @@ int main(int argc, char *argv[]) {
             for (int j = i + 1; j < NUM_STRINGS; j++) {
                 if (useful[j]) {
 // ^ is bitwise XOR operator
+                    //so we can say which two lines are responsible for an xor
+                    xor_desc[xor_it] = new char[DESC_LENGTH];
+                    sprintf(xor_desc[xor_it], "%d %d", i, j);
                     xor_length[xor_it] = max(num_bytes[i], num_bytes[j]);
                     xors[xor_it] = new unsigned char[xor_length[xor_it]];
                     for (int k = 0; k < xor_length[xor_it]; k++) {
@@ -101,6 +106,7 @@ int main(int argc, char *argv[]) {
 
     //print the XOR'd strings to make sure I'm doing it right
     for (int i = 0; i < num_xors; i++) {
+        printf("%s\n", xor_desc[i]);
         for (int j = 0; j < xor_length[i]; j++) {
             printf("%02x ", xors[i][j]);
         }
