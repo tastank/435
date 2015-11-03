@@ -2,16 +2,17 @@
 #include <cstdio>
 
 
-#define NUM_STRINGS 20
+#define NUM_STRINGS 13
 #define STR_LENGTH  256
 
 bool is_hex_digit(char);
-char get_char_from_hex_str(char *);
-char get_hex_val(char);
+unsigned char get_char_from_hex_str(char *);
+unsigned char get_hex_val(char);
 int count_true(bool*, int);
 int max(int, int);
 
 int main(int argc, char *argv[]) {
+
     //xor infilename outfilename
     if (argc != 3) {
         printf("Wrong number of args.\n");
@@ -27,7 +28,7 @@ int main(int argc, char *argv[]) {
 
     //allocate memory for the input strings
     char **input = new char*[NUM_STRINGS];
-    char **bytes = new char*[NUM_STRINGS];
+    unsigned char **bytes = new unsigned char*[NUM_STRINGS];
     bool *useful = new bool[NUM_STRINGS];
 
     //get the input strings
@@ -35,11 +36,11 @@ int main(int argc, char *argv[]) {
         input[i] = new char[STR_LENGTH];
         //assume there's no error here, because this isn't for anyone else to use
         input[i] = fgets(input[i], STR_LENGTH, fp);
-        if (is_hex_digit(input[i][0])) {
+        if (!is_hex_digit(input[i][0])) {
             useful[i] = false;
         } else {
             useful[i] = true;
-            bytes[i] = new char[STR_LENGTH];
+            bytes[i] = new unsigned char[STR_LENGTH];
         }
     }
 
@@ -58,10 +59,11 @@ int main(int argc, char *argv[]) {
                 if (input[i][index+2] == '\n') {
                     //j is zero-indexed
                     num_bytes[i] = j + 1;
+                    break;
                 }
 
-                //two hex digits plus a space
-                index += 3;
+                //two hex digits
+                index += 2;
             }
         }
     }
@@ -74,7 +76,7 @@ int main(int argc, char *argv[]) {
     // n*(n+1)/2
     //where n is the number of useful rows
     int num_xors = num_useful * (num_useful + 1) / 2;
-    char ** xors = new char*[num_xors];
+    unsigned char ** xors = new unsigned char*[num_xors];
     int *xor_length = new int[num_xors];
 
     int xor_it = 0;
@@ -86,7 +88,7 @@ int main(int argc, char *argv[]) {
                 if (useful[j]) {
 // ^ is bitwise XOR operator
                     xor_length[xor_it] = max(num_bytes[i], num_bytes[j]);
-                    xors[xor_it] = new char[xor_length[xor_it]];
+                    xors[xor_it] = new unsigned char[xor_length[xor_it]];
                     for (int k = 0; k < xor_length[xor_it]; k++) {
                         xors[xor_it][k] = bytes[i][k] ^ bytes[j][k];
                     }
@@ -100,7 +102,7 @@ int main(int argc, char *argv[]) {
     //print the XOR'd strings to make sure I'm doing it right
     for (int i = 0; i < num_xors; i++) {
         for (int j = 0; j < xor_length[i]; j++) {
-            printf("%x ", (int) xors[i][j]);
+            printf("%x ", xors[i][j]);
         }
         printf("\n");
     }
@@ -120,26 +122,30 @@ int main(int argc, char *argv[]) {
 
 
 bool is_hex_digit(char input) {
-    return  (!(input >= 'a' && input <= 'f') && 
-             !(input >= 'A' && input <= 'F') &&
-             !(input >= '0' && input <= '9'));
+    return  ((input >= 'a' && input <= 'f') || 
+             (input >= 'A' && input <= 'F') ||
+             (input >= '0' && input <= '9'));
 }
 
 //returns the value of the first two digits
 //of a hexadecimal string
-char get_char_from_hex_str(char *string) {
-    char hex_num;
+unsigned char get_char_from_hex_str(char *string) {
+    unsigned char hex_num;
     //error checking, even though it means we're redundantly
     //calling get_hex_val
-    if (!is_hex_digit(string[0])) exit(-2);
-    if (!is_hex_digit(string[1])) exit(-2);
+    if (!is_hex_digit(string[0])) {
+        exit(-2);
+    }
+    if (!is_hex_digit(string[1])) {
+        exit(-2);
+    }
     hex_num = 16 * get_hex_val(string[0]);
     hex_num += get_hex_val(string[1]);
     return hex_num;
 }
 
 //returns the numerical value of a digit given in hexadecimal
-char get_hex_val(char digit) {
+unsigned char get_hex_val(char digit) {
     if (digit >= 'a' && digit <= 'f') {
         return digit - 'a' + (char)10;
     } else if (digit >= 'A' && digit <= 'F') {
