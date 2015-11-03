@@ -164,13 +164,44 @@ int main(int argc, char *argv[]) {
         Words[i][0] -= (char) 32;
     }
 
-    for (int i = 0; i < num_xors; i++) {
-        for (int j = 0; j < NUM_WORDS; j++) {
-            for (int k = 0; k < word_length[j]; k++) {
-                char xor_char = xors[i][k] ^ (unsigned char)words[j][k];
-                printf("%c", xor_char);
+
+    //XOR each word from the wordlist against the beginning of each of the XORs
+    char *xor_str = new char[MAX_WORDLENGTH];
+    char *Xor_Str = new char[MAX_WORDLENGTH];
+    bool lowercase;
+    for (int xor_it = 0; xor_it < num_xors; xor_it++) {
+        for (int word_it = 0; word_it < NUM_WORDS; word_it++) {
+            //xor the word against the first characters of the XOR
+            for (int char_it = 0; char_it < word_length[word_it]; char_it++) {
+                xor_str[char_it] = xors[xor_it][char_it] ^ (unsigned char)words[word_it][char_it];
             }
-            printf("\n");
+            xor_str[word_length[word_it]] = '\0';
+            strncpy(Xor_Str, xor_str, MAX_WORDLENGTH);
+            Xor_Str[0] = xors[xor_it][0] ^ (unsigned char)Words[word_it][0];
+
+            //null terminate the first word
+            for (int char_it = 0; char_it < MAX_WORDLENGTH; char_it++) {
+                if (xor_str[char_it] == ' ') {
+                    xor_str[char_it] = '\0';
+                    Xor_Str[char_it] = '\0';
+                    break;
+                }
+            }
+
+            //compare the result to each word in the list
+            for (int word2_it = 0; word2_it < NUM_WORDS; word2_it++) {
+                if (strcmp(words[word2_it], xor_str) == 0) {
+                    lowercase = true;
+                    printf("%s: word found: %s; xor'd against: %s\n",
+                        xor_desc[xor_it], xor_str, words[word_it]
+                    );
+                } else if (strcmp(Words[word2_it], Xor_Str) == 0) {
+                    lowercase = false;
+                    printf("%s: word found: %s; xor'd against: %s\n",
+                        xor_desc[xor_it], Xor_Str, Words[word_it]
+                    );
+                }
+            }
         }
     }
 
