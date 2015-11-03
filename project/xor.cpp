@@ -4,13 +4,13 @@
 
 #define NUM_STRINGS 13
 #define STR_LENGTH  256
-#define DESC_LENGTH 6
+#define DESC_LENGTH 8
 
 bool is_hex_digit(char);
 unsigned char get_char_from_hex_str(char *);
 unsigned char get_hex_val(char);
 int count_true(bool*, int);
-int max(int, int);
+int min(int, int);
 
 int main(int argc, char *argv[]) {
 
@@ -92,7 +92,7 @@ int main(int argc, char *argv[]) {
                     //so we can say which two lines are responsible for an xor
                     xor_desc[xor_it] = new char[DESC_LENGTH];
                     sprintf(xor_desc[xor_it], "%d %d", i, j);
-                    xor_length[xor_it] = max(num_bytes[i], num_bytes[j]);
+                    xor_length[xor_it] = min(num_bytes[i], num_bytes[j]);
                     xors[xor_it] = new unsigned char[xor_length[xor_it]];
                     for (int k = 0; k < xor_length[xor_it]; k++) {
                         xors[xor_it][k] = bytes[i][k] ^ bytes[j][k];
@@ -104,7 +104,7 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    //print the XOR'd strings to make sure I'm doing it right
+    //print the XOR'd strings for a sanity check
     for (int i = 0; i < num_xors; i++) {
         printf("%s\n", xor_desc[i]);
         for (int j = 0; j < xor_length[i]; j++) {
@@ -112,6 +112,7 @@ int main(int argc, char *argv[]) {
         }
         printf("\n");
     }
+
 
 
     for (int i = 0; i < NUM_STRINGS; i++) {
@@ -173,8 +174,8 @@ int count_true(bool *bit_array, int length) {
     return num_true;
 }
 
-int max(int int1, int int2) {
-    if (int1 > int2) {
+int min(int int1, int int2) {
+    if (int1 < int2) {
         return int1;
     } else {
         return int2;
