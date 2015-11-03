@@ -190,12 +190,13 @@ int main(int argc, char *argv[]) {
 
             //compare the result to each word in the list
             for (int word2_it = 0; word2_it < NUM_WORDS; word2_it++) {
-                if (strcmp(words[word2_it], xor_str) == 0) {
+                //if xor_str is the same as words[word_it], then it was xor'd against 0000... and tells us nothing
+                if (strcmp(words[word2_it], xor_str) == 0 && strcmp(xor_str, words[word_it]) != 0) {
                     lowercase = true;
                     printf("%s: word found: %s; xor'd against: %s\n",
                         xor_desc[xor_it], xor_str, words[word_it]
                     );
-                } else if (strcmp(Words[word2_it], Xor_Str) == 0) {
+                } else if (strcmp(Words[word2_it], Xor_Str) == 0 && strcmp(Xor_Str, Words[word_it]) != 0) {
                     lowercase = false;
                     printf("%s: word found: %s; xor'd against: %s\n",
                         xor_desc[xor_it], Xor_Str, Words[word_it]
