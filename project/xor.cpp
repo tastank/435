@@ -124,7 +124,9 @@ int main(int argc, char *argv[]) {
     // Let's do some analysis!
 
 
-
+////////////////////////////////////////////////////////////////////////////////
+// Generate wordlist
+////////////////////////////////////////////////////////////////////////////////
 
 
 
@@ -163,6 +165,16 @@ int main(int argc, char *argv[]) {
         strncpy(Words[i], words[i], strlen(words[i]));
         Words[i][0] -= (char) 32;
     }
+
+
+    fclose(wordlist_file);
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Do analysis
+////////////////////////////////////////////////////////////////////////////////
 
 
     //XOR each word from the wordlist against the beginning of each of the XORs
@@ -225,8 +237,6 @@ int main(int argc, char *argv[]) {
 
 
 
-
-    fclose(wordlist_file);
 
 
 
