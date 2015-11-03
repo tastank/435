@@ -47,7 +47,7 @@ int main(int argc, char *argv[]) {
 
     int *num_bytes = new int[NUM_STRINGS];
 
-    //I could do this above, but for clarity
+    //I could do this in the loop above, but for clarity...
     //convert from the characters to their hex values
     //store the numerical value of the hex number in bytes[].
     for (int i = 0; i < NUM_STRINGS; i++) {
@@ -69,14 +69,19 @@ int main(int argc, char *argv[]) {
         }
     }
 
+    for (int i = 0; i < NUM_STRINGS; i++) {
+        delete[] input[i];
+    }
+    delete[] input;
+
     //get number of useful rows, so we can calculate how many XORs to do
     int num_useful = count_true(useful, NUM_STRINGS);
 
     //calculate number of XORs - it's
-    // \sum_{i=1}^{n} i, equal to
-    // n*(n+1)/2
+    // \sum_{i=1}^{n-1} i, equal to
+    // n*(n-1)/2
     //where n is the number of useful rows
-    int num_xors = num_useful * (num_useful + 1) / 2;
+    int num_xors = num_useful * (num_useful - 1) / 2;
     unsigned char ** xors = new unsigned char*[num_xors];
     char **xor_desc = new char*[num_xors];
     int *xor_length = new int[num_xors];
@@ -115,15 +120,44 @@ int main(int argc, char *argv[]) {
 
 
 
+    // Now we have a collection of (1) byte arrays and (2) XOR'd byte arrays
+    // We're done with the input file, so close it
+    fclose(fp);
+
+
+    // Let's do some analysis!
+//    fp = fopen(
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     for (int i = 0; i < NUM_STRINGS; i++) {
-        delete[] input[i];
         delete[] bytes[i];
     }
-    delete[] input;
+    for (int i = 0; i < num_xors; i++) {
+        delete[] xor_desc;
+    }
     delete[] bytes;
     delete[] useful;
-    //close the input file
-    fclose(fp);
     return 0;
 }
 
