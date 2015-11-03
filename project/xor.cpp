@@ -143,6 +143,7 @@ int main(int argc, char *argv[]) {
     // Words is the same list as words, but with the first char capitalized
     char **words = new char*[NUM_WORDS];
     char **Words = new char*[NUM_WORDS];
+    int *word_length = new int[NUM_WORDS];
     for (int i = 0; i < NUM_WORDS; i++) {
         words[i] = new char[MAX_WORDLENGTH];
         Words[i] = new char[MAX_WORDLENGTH];
@@ -154,14 +155,24 @@ int main(int argc, char *argv[]) {
         do {
             if (words[i][c] == '\n') {
                 words[i][c] = '\0';
+                word_length[i] = c;
             }
             //YEEAAAHHHH!!!!!
             c++;
         } while (words[i][c] != '\0');
         strncpy(Words[i], words[i], strlen(words[i]));
+        Words[i][0] -= (char) 32;
     }
 
-
+    for (int i = 0; i < num_xors; i++) {
+        for (int j = 0; j < NUM_WORDS; j++) {
+            for (int k = 0; k < word_length[j]; k++) {
+                char xor_char = xors[i][k] ^ (unsigned char)words[j][k];
+                printf("%c", xor_char);
+            }
+            printf("\n");
+        }
+    }
 
 
 
