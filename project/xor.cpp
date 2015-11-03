@@ -132,7 +132,7 @@ int main(int argc, char *argv[]) {
 
 
 #define MAX_WORDLENGTH 64
-#define NUM_WORDS 10000
+#define NUM_WORDS 1000
 
     FILE *wordlist_file = fopen(argv[2], "r");
 
@@ -177,6 +177,8 @@ int main(int argc, char *argv[]) {
 ////////////////////////////////////////////////////////////////////////////////
 
 
+#define SMALL_WORD_THRESH 3
+
     //XOR each word from the wordlist against the beginning of each of the XORs
     char *xor_str = new char[MAX_WORDLENGTH];
     char *Xor_Str = new char[MAX_WORDLENGTH];
@@ -202,13 +204,20 @@ int main(int argc, char *argv[]) {
 
             //compare the result to each word in the list
             for (int word2_it = 0; word2_it < NUM_WORDS; word2_it++) {
-                //if xor_str is the same as words[word_it], then it was xor'd against 0000... and tells us nothing
-                if (strcmp(words[word2_it], xor_str) == 0 && strcmp(xor_str, words[word_it]) != 0) {
+                if (strcmp(words[word2_it], xor_str) == 0 && 
+                    //if xor_str is the same as words[word_it], then it was xor'd against 0000... and tells us nothing
+                    strcmp(xor_str, words[word_it]) != 0 &&
+                    //if the word is sufficiently short, it's probably a coincidence
+                    word_length[word2_it] >= SMALL_WORD_THRESH
+                ) {
                     lowercase = true;
                     printf("%s: word found: %s; xor'd against: %s\n",
                         xor_desc[xor_it], xor_str, words[word_it]
                     );
-                } else if (strcmp(Words[word2_it], Xor_Str) == 0 && strcmp(Xor_Str, Words[word_it]) != 0) {
+                } else if (strcmp(Words[word2_it], Xor_Str) == 0 &&
+                    strcmp(Xor_Str, Words[word_it]) != 0 &&
+                    word_length[word2_it] >= SMALL_WORD_THRESH
+                ) {
                     lowercase = false;
                     printf("%s: word found: %s; xor'd against: %s\n",
                         xor_desc[xor_it], Xor_Str, Words[word_it]
