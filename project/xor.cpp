@@ -14,9 +14,11 @@ int min(int, int);
 
 int main(int argc, char *argv[]) {
 
-    //xor infilename outfilename
-    if (argc != 3) {
+    //xor infilename wordlist outfilename
+    if (argc != 2) {
+//    if (argc != 4) {
         printf("Wrong number of args.\n");
+        printf("Xor infile wordlist outfile\n");
         return -1;
     }
 
@@ -126,7 +128,25 @@ int main(int argc, char *argv[]) {
 
 
     // Let's do some analysis!
-//    fp = fopen(
+    fp = fopen(argv[2], "r");
+
+#define MAX_WORDLENGTH 64
+#define NUM_WORDS 10000
+    char **words = new char*[NUM_WORDS];
+    for (int i = 0; i < NUM_WORDS; i++) {
+        words[i] = new char[MAX_WORDLENGTH];
+        fgets(words[i], MAX_WORDLENGTH, fp);
+
+        //remove trailing '\n' from every string
+        //and make sure it is null-terminated
+        int c = 0;
+        do {
+            if (words[i][c] == '\n') {
+                words[i][c] = '\0';
+            }
+        } while (words[i][c] != '\0');
+    }
+
 
 
 
