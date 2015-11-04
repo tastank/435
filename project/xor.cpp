@@ -108,6 +108,7 @@ int main(int argc, char *argv[]) {
         }
     }
 
+/*
     //print the XOR'd strings for a sanity check
     for (int i = 0; i < num_xors; i++) {
         printf("%s\n", xor_desc[i]);
@@ -116,7 +117,7 @@ int main(int argc, char *argv[]) {
         }
         printf("\n");
     }
-
+*/
 
     // Now we have a collection of (1) byte arrays and (2) XOR'd byte arrays
     // We're done with the input file, so close it
@@ -125,19 +126,17 @@ int main(int argc, char *argv[]) {
 
 
 ////////////////////////////////////////////////////////////////////////////////
-// Generate wordlist
+// Create wordlist
 ////////////////////////////////////////////////////////////////////////////////
 
 
 
 
 #define MAX_WORDLENGTH 64
-#define NUM_WORDS 1000
+#define NUM_WORDS 2000
 
     FILE *wordlist_file = fopen(argv[2], "r");
 
-
-    printf("Hello");
 
     //Idea: XOR the XOR against a wordlist, and if one of the words that appears
     //      appears also in our wordlist, we've found a word in one of the strings
