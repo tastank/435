@@ -133,7 +133,7 @@ int main(int argc, char *argv[]) {
 
 
 #define MAX_WORDLENGTH 64
-#define NUM_WORDS 10000
+#define NUM_WORDS 100
 
     FILE *wordlist_file = fopen(argv[2], "r");
 
@@ -183,8 +183,11 @@ int main(int argc, char *argv[]) {
     char *Xor_Str = new char[MAX_WORDLENGTH];
     bool lowercase;
     for (int xor_it = 0; xor_it < num_xors; xor_it++) {
-        for (int strpos_it = 0; strpos_it < num_bytes[xor_it]; strpos_it++) {
+        for (int strpos_it = 0; strpos_it < xor_length[xor_it]; strpos_it++) {
             for (int word_it = 0; word_it < NUM_WORDS; word_it++) {
+                //don't do the xor if the word is too long
+                if (word_length[word_it] + strpos_it >= num_bytes[xor_it]) break;
+
                 //xor the word against the first characters of the XOR
                 for (int char_it = 0; char_it < word_length[word_it]; char_it++) {
                     xor_str[char_it] = xors[xor_it][char_it+strpos_it] ^ (unsigned char)words[word_it][char_it];
@@ -255,7 +258,16 @@ int main(int argc, char *argv[]) {
 
 
 
-
+    for (int i = 0; i < NUM_WORDS; i++) {
+        delete[] words[i];
+        delete[] Words[i];
+    }
+    delete[] words;
+    delete[] Words;
+    for (int i = 0; i < num_xors; i++) {
+        delete[] xors[i];
+    }
+    delete xors;
     for (int i = 0; i < NUM_STRINGS; i++) {
         delete[] input[i];
         delete[] bytes[i];
