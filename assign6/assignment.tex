@@ -1,0 +1,74 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[margin=3cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{mathtools}
+\usepackage{verbatim}
+\begin{document}
+
+\pagestyle{fancy}
+\lhead{Tyler Ayrton Stank}
+\chead{Assignment}
+\rhead{\today}
+
+\begin{enumerate}
+
+    %1
+    \item
+        Meet-in-the-Middle is a chosen plaintext attack: the attacker chooses a plaintext to send through the 2DES encryption function, observes the ciphertext, and attempts to create a decryption function given them both.
+        Two blocks are needed because using only one can give incorrect candidate keys - when running an exhaustive MITM attack, one will find several keys giving the proper first-encryption of the plaintext and first-decryption of the ciphertext.
+        Re-running the MITM algorithm with a different plaintext block and different corresponding ciphertext block will eliminate the incorrect candidate keys, and only one key pair (the correct key pair) will give the proper output for both encryption functions on both blocks.
+
+    %2
+    \item
+
+    %3
+    \item
+    $$00010010 \times 00110000 \equiv (x^4 + x)(x^5 + x^4)$$
+    $$ = x^9 + x^8 + x^6 + x^5 \equiv 1101100000$$
+    Multiplication in $GF(2^8)$ requires modulo by $100011011$ (the irreducible polynomial for $GF(2^8)$, so we take
+    $$1101100000 \mod 100011011 = 01001101$$
+    using the definition of mod over $GF(2^8)$, and this result is then our answer: $01001101$.
+
+    Alternatively, we can use a modified variant of the ``peasant's algorithm.''  Using this with XOR to replace polynomial addition, and right or left shift for division or multiplication by x.  This shows the end of the algorithm at each iteration (with c indicating the `carry' bit, the leftmost bit of a, is set, and the value associated with it, 00011011, being the irreducible polynomial for $GF(2^8)$ with the high bit removed.
+\begin{verbatim}
+a 00010010
+b 00110000
+p 00000000
+
+a 00100100
+b 00011000
+p 00000000
+
+a 01001000
+b 00001100
+p 00000000
+
+a 10010000
+b 00000110
+p 00000000
+
+c 00011011
+a 00111011
+b 00000011
+p 00000000
+
+a 01110110
+b 00000001
+p 00111011
+
+a 11101100
+b 00000000
+p 01001101
+\end{verbatim}
+    Wih b equal to $00000000$, the product p will no longer change, and is equal to the answer found previously: $01001101$.
+
+    %4
+    \item
+
+
+\end{enumerate}
+
+\end{document}
