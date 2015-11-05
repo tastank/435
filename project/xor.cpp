@@ -109,16 +109,22 @@ int main(int argc, char *argv[]) {
         }
     }
 
-/*
+
     //print the XOR'd strings for a sanity check
     for (int i = 0; i < num_xors; i++) {
         printf("%s\n", xor_desc[i]);
         for (int j = 0; j < xor_length[i]; j++) {
-            printf("%02x ", xors[i][j]);
+            if ((xors[i][j] <= 'z' && xors[i][j] >= 'a') || (xors[i][j] >= 'A' && xors[i][j] <= 'Z') || (xors[i][j] <= '9' && xors[i][j] >= '0')) {
+                printf("%c", xors[i][j]);
+            } else if (xors[i][j] == '\0'){
+                printf("|");
+            } else {
+                printf(".");
+            }
         }
         printf("\n");
     }
-*/
+
 
     // Now we have a collection of (1) byte arrays and (2) XOR'd byte arrays
     // We're done with the input file, so close it
@@ -134,7 +140,7 @@ int main(int argc, char *argv[]) {
 
 
 #define MAX_WORDLENGTH 64
-#define NUM_WORDS 200
+#define NUM_WORDS 9900
 
     FILE *wordlist_file = fopen(argv[2], "r");
 
@@ -177,8 +183,9 @@ int main(int argc, char *argv[]) {
 ////////////////////////////////////////////////////////////////////////////////
 
 
-#define SMALL_WORD_THRESH 3
-
+#define SMALL_WORD_THRESH 5
+#define CHAR_MATCH_THRESH   0.4
+ 
     //XOR each word from the wordlist against the beginning of each of the XORs
     char *xor_str = new char[MAX_WORDLENGTH];
     char *Xor_Str = new char[MAX_WORDLENGTH];
@@ -210,7 +217,7 @@ int main(int argc, char *argv[]) {
                 for (int word2_it = 0; word2_it < NUM_WORDS; word2_it++) {
                     if (strcmp(words[word2_it], xor_str) == 0 && 
                         //if xor_str is the same as words[word_it], then it was xor'd against 0000... and tells us nothing
-                        matching_chars(xor_str, words[word_it]) == 0 &&
+                        matching_chars(xor_str, words[word_it]) < (int)CHAR_MATCH_THRESH*word_length[word_it] &&
                         //if the word is sufficiently short, it's probably a coincidence
                         word_length[word2_it] >= SMALL_WORD_THRESH
                     ) {
@@ -219,7 +226,7 @@ int main(int argc, char *argv[]) {
                             xor_desc[xor_it], strpos_it, xor_str, words[word_it]
                         );
                     } else if (strcmp(Words[word2_it], Xor_Str) == 0 &&
-                        matching_chars(Xor_Str, Words[word_it]) == 0 &&
+                        matching_chars(Xor_Str, Words[word_it]) < (int)CHAR_MATCH_THRESH*word_length[word_it] &&
                         word_length[word2_it] >= SMALL_WORD_THRESH
                     ) {
                         lowercase = false;
