@@ -1,28 +1,14 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.9.8)  22 SEP 2015 17:47
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.18)  23 SEP 2015 21:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **assignment.tex
 (./assignment.tex
 LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, ge
-rman-x-2011-07-01, ngerman-x-2011-07-01, afrikaans, ancientgreek, ibycus, arabi
-c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
-h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
-h, french, galician, german, ngerman, swissgerman, monogreek, greek, hungarian,
- icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, marathi, or
-iya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, kurmanji,
- lao, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk, pol
-ish, portuguese, romanian, russian, sanskrit, serbian, serbianc, slovak, sloven
-ian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, welsh, loaded
-.
-
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/base/article.
-cls
+Babel <3.9h> and hyphenation patterns for 2 languages loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/base/size12.c
-lo
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -37,75 +23,61 @@ File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/amsfonts/amsf
-onts.sty
-Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks14
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/amsfonts/amss
-ymb.sty
-Package: amssymb 2009/06/22 v3.00
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
 )
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/graphics/grap
-hicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/graphics/keyv
-al.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks15
 )
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/graphics/grap
-hics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/graphics/trig
-.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/latexconfig/g
-raphics.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/pdftex-def/pd
-ftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/generic/oberdiek/in
-fwarerr.sty
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/generic/oberdiek/lt
-xcmds.sty
-Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count87
 ))
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
 )
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/geometry/geom
-etry.sty
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/generic/oberdiek/if
-pdf.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/generic/oberdiek/if
-vtex.sty
-Package: ifvtex 2010/03/01 v1.5 Switches for detecting VTeX and its modes (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/generic/ifxetex/ifx
-etex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count88
@@ -121,8 +93,7 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen112
 \Gm@dimlist=\toks16
 )
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/fancyhdr/fanc
-yhdr.sty
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 \fancy@headwidth=\skip43
 \f@ncyO@elh=\skip44
 \f@ncyO@erh=\skip45
@@ -133,12 +104,10 @@ yhdr.sty
 \f@ncyO@olf=\skip50
 \f@ncyO@orf=\skip51
 )
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/mh/mathtools.
-sty
-Package: mathtools 2011/04/06 v1.11 mathematical typesetting tools
+(/usr/share/texlive/texmf-dist/tex/latex/mh/mathtools.sty
+Package: mathtools 2013/02/12 v1.13 mathematical typesetting tools
 
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/tools/calc.st
-y
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count91
 \calc@Bcount=\count92
@@ -151,51 +120,44 @@ LaTeX Info: Redefining \addtolength on input line 77.
 \calc@Ccount=\count93
 \calc@Cskip=\skip54
 )
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/mh/mhsetup.st
-y
+(/usr/share/texlive/texmf-dist/tex/latex/mh/mhsetup.sty
 Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
 )
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/amsmath/amsma
-th.sty
-Package: amsmath 2000/07/18 v2.13 AMS math features
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip55
 
 For additional information on amsmath, use the `?' option.
-
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/amsmath/amste
-xt.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/amsmath/amsge
-n.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks17
 \ex@=\dimen115
 ))
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/amsmath/amsbs
-y.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen116
 )
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/amsmath/amsop
-n.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count94
-LaTeX Info: Redefining \frac on input line 211.
+LaTeX Info: Redefining \frac on input line 210.
 \uproot@=\count95
 \leftroot@=\count96
-LaTeX Info: Redefining \overline on input line 307.
+LaTeX Info: Redefining \overline on input line 306.
 \classnum@=\count97
 \DOTSCASE@=\count98
-LaTeX Info: Redefining \ldots on input line 379.
-LaTeX Info: Redefining \dots on input line 382.
-LaTeX Info: Redefining \cdots on input line 467.
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
 \Mathstrutbox@=\box26
 \strutbox@=\box27
 \big@size=\dimen117
-LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \macc@depth=\count99
 \c@MaxMatrixCols=\count100
 \dotsspace@=\muskip10
@@ -216,15 +178,22 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 \multlinegap=\skip56
 \multlinetaggap=\skip57
 \mathdisplay@stack=\toks21
-LaTeX Info: Redefining \[ on input line 2666.
-LaTeX Info: Redefining \] on input line 2667.
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
 )
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \g_MT_multlinerow_int=\count106
 \l_MT_multwidth_dim=\dimen124
 \origjot=\skip58
 \l_MT_shortvdotswithinadjustabove_dim=\dimen125
 \l_MT_shortvdotswithinadjustbelow_dim=\dimen126
-) (./assignment.aux)
+\l_MT_above_intertext_sep=\dimen127
+\l_MT_below_intertext_sep=\dimen128
+\l_MT_above_shortintertext_sep=\dimen129
+\l_MT_below_shortintertext_sep=\dimen130
+)
+(./assignment.aux)
 \openout1 = `assignment.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
@@ -240,27 +209,24 @@ LaTeX Font Info:    ... okay on input line 8.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
 LaTeX Font Info:    ... okay on input line 8.
 
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/context/base/supp-p
-df.mkii
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count107
-\scratchdimen=\dimen127
+\scratchdimen=\dimen131
 \scratchbox=\box28
 \nofMPsegments=\count108
 \nofMParguments=\count109
 \everyMPshowfont=\toks22
 \MPscratchCnt=\count110
-\MPscratchDim=\dimen128
+\MPscratchDim=\dimen132
 \MPnumerator=\count111
 \makeMPintoPDFobject=\count112
 \everyMPtoPDFconversion=\toks23
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/generic/oberdiek/pd
-ftexcmds.sty
-Package: pdftexcmds 2011/04/22 v0.16 Utilities of pdfTeX for LuaTeX (HO)
 
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/generic/oberdiek/if
-luatex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
 Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
@@ -269,29 +235,23 @@ Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/oberdiek/epst
-opdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/oberdiek/grfe
-xt.sty
-Package: grfext 2010/08/19 v1.1 Managing graphics extensions (HO)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/generic/oberdiek/kv
-definekeys.sty
-Package: kvdefinekeys 2011/04/07 v1.3 Defining keys (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
 ))
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/oberdiek/kvop
-tions.sty
-Package: kvoptions 2010/12/23 v3.10 Keyval support for LaTeX options (HO)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/generic/oberdiek/kv
-setkeys.sty
-Package: kvsetkeys 2011/04/07 v1.13 Key value parser (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
 
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/generic/oberdiek/et
-excmds.sty
-Package: etexcmds 2011/02/16 v1.5 Prefix for e-TeX command names (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
 (etexcmds)             that some package has redefined \expanded.
@@ -302,8 +262,7 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 452.
 
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/latexconfig/e
-pstopdf-sys.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
@@ -342,22 +301,18 @@ e
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    Try loading font information for U+msa on input line 22.
-
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/amsfonts/umsa
-.fd
-File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 22.
 
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/amsfonts/umsb
-.fd
-File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 101.
 
 
-(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/base/omscmr.f
-d
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
@@ -369,8 +324,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[1{/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-var/fonts/map/pdftex/updma
-p/pdftex.map}
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
 
@@ -381,26 +335,25 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [2] (./assignment.aux) ) 
 Here is how much of TeX's memory you used:
- 3444 strings out of 493629
- 49389 string characters out of 3134964
- 117451 words of memory out of 3000000
- 6698 multiletter control sequences out of 15000+200000
- 8454 words of font info for 33 fonts, out of 3000000 for 9000
- 831 hyphenation exceptions out of 8191
- 38i,10n,43p,259b,351s stack positions out of 5000i,500n,10000p,200000b,50000s
-</afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmex10.pfb></afs/cs.wisc.edu/s/texlive-2011/amd
-64_rhel5/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></afs/cs.wisc.edu
-/s/texlive-2011/amd64_rhel5/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
-></afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr8.pfb></afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmsy10.pfb></afs/cs.wisc.edu/s/texlive-2011/amd64_rhe
-l5/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></afs/cs.wisc.edu/s/texl
-ive-2011/amd64_rhel5/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on assignment.pdf (2 pages, 66444 bytes).
+ 3524 strings out of 495028
+ 48922 string characters out of 6181497
+ 119024 words of memory out of 5000000
+ 6684 multiletter control sequences out of 15000+600000
+ 8454 words of font info for 33 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 38i,10n,43p,474b,351s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on assignment.pdf (2 pages, 78534 bytes).
 PDF statistics:
- 39 PDF objects out of 1000 (max. 8388607)
- 27 compressed objects within 1 object stream
+ 43 PDF objects out of 1000 (max. 8388607)
+ 30 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

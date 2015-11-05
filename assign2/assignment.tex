@@ -103,34 +103,40 @@
     %3
     \item
     \begin{enumerate}
-    \item
-        To easily do the frequency count we can sort the letters alphabetically - \\
-        {\tt MCIFGSQFSHWGGOTSKWHVASPSQOIGSHVSFSWGOQVOBQSWKOGBCHZWGHSBWBU}\\
-        {\tt ABBBBCCFFFGGGGGGGHHHHHIIKKMOOOOOPQQQQSSSSSSSSSSTUVVVWWWWWWZ}\\
-        From here we can see the frequency count is as follows:\\
-        \begin{tabular}{cr}
-            A &  1 \\
-            B &  4 \\
-            C &  2 \\
-            F &  3 \\
-            G &  7 \\
-            H &  5 \\
-            I &  2 \\
-            K &  2 \\
-            M &  1 \\
-            O &  5 \\
-            P &  1 \\
-            Q &  4 \\
-            S & 10 \\
-            T &  1 \\
-            U &  1 \\
-            V &  3 \\
-            W &  6 \\
-            Z &  1 \\
-        \end{tabular}\\
-        Assuming that S, the most common letter in ciphertext, maps to E, the most common letter in English plaintext, we can unshift the cipher 12 spaces to obtain the plaintext:\\
-        {\tt YOURSECRETISSAFEWITHMEBECAUSETHEREISACHANCEIWASNOTLISTENING}\\
-        or ``Your secret is safe with me because there is a chance I was not listening."
+        \item
+            To easily do the frequency count we can sort the letters alphabetically - \\
+            {\tt MCIFGSQFSHWGGOTSKWHVASPSQOIGSHVSFSWGOQVOBQSWKOGBCHZWGHSBWBU}\\
+            {\tt ABBBBCCFFFGGGGGGGHHHHHIIKKMOOOOOPQQQQSSSSSSSSSSTUVVVWWWWWWZ}\\
+            From here we can see the frequency count is as follows:\\
+            \begin{tabular}{cr}
+                A &  1 \\
+                B &  4 \\
+                C &  2 \\
+                F &  3 \\
+                G &  7 \\
+                H &  5 \\
+                I &  2 \\
+                K &  2 \\
+                M &  1 \\
+                O &  5 \\
+                P &  1 \\
+                Q &  4 \\
+                S & 10 \\
+                T &  1 \\
+                U &  1 \\
+                V &  3 \\
+                W &  6 \\
+                Z &  1 \\
+            \end{tabular}\\
+            Assuming that S, the most common letter in ciphertext, maps to E, the most common letter in English plaintext, we can shift the cipher 12 spaces to obtain the plaintext:\\
+            {\tt YOURSECRETISSAFEWITHMEBECAUSETHEREISACHANCEIWASNOTLISTENING}\\
+            or ``Your secret is safe with me because there is a chance I was not listening."
+        \item
+            To use this method, we calculate the frequency of each letter (divide number of occurrences by the total number of letters) in the ciphertext and compare it to that known in English, then sum up all 26 values - i.e., if $Q_l$ is the probability of letter $l$ in the ciphertext and $P_l$ is the frequency of $l$ in U.S. English, we want to sum $(P_l - Q_l)^2$ over all $l$ - the difference is squared so that it is always positive.
+            We then rotate the cipertext by one -- call this $Q^1$ -- and do the same.
+            The favored rotation will be by $i$, such that $i$ minimizes the quantity $\sum_l(P_l - Q^i_l)^2$, which we'll call ``deviation."
+            In this example, we find this to be given by $i = 12$, with a deviation  of $0.0133$, which indeed gives the correct decryption.
+            The maximum deviation (in a sense, the least correct shift) comes with a shift of $i = 9$, which gives a deviation of $0.0972$.
     \end{enumerate}
 
 

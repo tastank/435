@@ -211,8 +211,8 @@ int main(int argc, char *argv[]) {
                         word_length[word2_it] >= SMALL_WORD_THRESH
                     ) {
                         lowercase = true;
-                        printf("%s: word found: %s; xor'd against: %s\n",
-                            xor_desc[xor_it], xor_str, words[word_it]
+                        printf("%s pos %d: word found: %s; xor'd against: %s\n",
+                            xor_desc[xor_it], strpos_it, xor_str, words[word_it]
                         );
                     } else if (strcmp(Words[word2_it], Xor_Str) == 0 &&
                         strcmp(Xor_Str, Words[word_it]) != 0 &&

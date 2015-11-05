@@ -30,7 +30,7 @@ int main(int argc, char **argv) {
     printf("Total number of chars: %d", i);
 
     for (int keylength = atoi(argv[2]); keylength <= atoi(argv[3]); keylength++) {
-        printf("\nKey length = %d, ics:", keylength);
+        printf("\nKey length = %d, mean ic:\t", keylength);
         float mean = 0.0f;
         for (int keypos = 0; keypos < keylength; keypos++) {
             int ic_numerator = 0;
@@ -48,11 +48,10 @@ int main(int argc, char **argv) {
                 }
             }
             float ic = (float)ic_numerator / (col_length * (col_length - 1));
-            printf("\t%f", ic);
             mean += ic;
         }
         mean = mean / keylength;
-        printf("Mean: %f", mean);
+        printf("%f", mean);
     }
 
     printf("\n");
