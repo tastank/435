@@ -133,7 +133,7 @@ int main(int argc, char *argv[]) {
 
 
 #define MAX_WORDLENGTH 64
-#define NUM_WORDS 2000
+#define NUM_WORDS 10000
 
     FILE *wordlist_file = fopen(argv[2], "r");
 
@@ -176,51 +176,53 @@ int main(int argc, char *argv[]) {
 ////////////////////////////////////////////////////////////////////////////////
 
 
-#define SMALL_WORD_THRESH 3
+#define SMALL_WORD_THRESH 4
 
     //XOR each word from the wordlist against the beginning of each of the XORs
     char *xor_str = new char[MAX_WORDLENGTH];
     char *Xor_Str = new char[MAX_WORDLENGTH];
     bool lowercase;
     for (int xor_it = 0; xor_it < num_xors; xor_it++) {
-        for (int word_it = 0; word_it < NUM_WORDS; word_it++) {
-            //xor the word against the first characters of the XOR
-            for (int char_it = 0; char_it < word_length[word_it]; char_it++) {
-                xor_str[char_it] = xors[xor_it][char_it] ^ (unsigned char)words[word_it][char_it];
-            }
-            xor_str[word_length[word_it]] = '\0';
-            strncpy(Xor_Str, xor_str, MAX_WORDLENGTH);
-            Xor_Str[0] = xors[xor_it][0] ^ (unsigned char)Words[word_it][0];
-
-            //null terminate the first word
-            for (int char_it = 0; char_it < MAX_WORDLENGTH; char_it++) {
-                if (xor_str[char_it] == ' ') {
-                    xor_str[char_it] = '\0';
-                    Xor_Str[char_it] = '\0';
-                    break;
+        for (int strpos_it = 0; strpos_it < num_bytes[xor_it]; strpos_it++) {
+            for (int word_it = 0; word_it < NUM_WORDS; word_it++) {
+                //xor the word against the first characters of the XOR
+                for (int char_it = 0; char_it < word_length[word_it]; char_it++) {
+                    xor_str[char_it] = xors[xor_it][char_it+strpos_it] ^ (unsigned char)words[word_it][char_it];
                 }
-            }
+                xor_str[word_length[word_it]] = '\0';
+                strncpy(Xor_Str, xor_str, MAX_WORDLENGTH);
+                Xor_Str[0] = xors[xor_it][0] ^ (unsigned char)Words[word_it][0];
 
-            //compare the result to each word in the list
-            for (int word2_it = 0; word2_it < NUM_WORDS; word2_it++) {
-                if (strcmp(words[word2_it], xor_str) == 0 && 
-                    //if xor_str is the same as words[word_it], then it was xor'd against 0000... and tells us nothing
-                    strcmp(xor_str, words[word_it]) != 0 &&
-                    //if the word is sufficiently short, it's probably a coincidence
-                    word_length[word2_it] >= SMALL_WORD_THRESH
-                ) {
-                    lowercase = true;
-                    printf("%s: word found: %s; xor'd against: %s\n",
-                        xor_desc[xor_it], xor_str, words[word_it]
-                    );
-                } else if (strcmp(Words[word2_it], Xor_Str) == 0 &&
-                    strcmp(Xor_Str, Words[word_it]) != 0 &&
-                    word_length[word2_it] >= SMALL_WORD_THRESH
-                ) {
-                    lowercase = false;
-                    printf("%s: word found: %s; xor'd against: %s\n",
-                        xor_desc[xor_it], Xor_Str, Words[word_it]
-                    );
+                //null terminate the first word
+                for (int char_it = 0; char_it < MAX_WORDLENGTH; char_it++) {
+                    if (xor_str[char_it] == ' ') {
+                        xor_str[char_it] = '\0';
+                        Xor_Str[char_it] = '\0';
+                        break;
+                    }
+                }
+
+                //compare the result to each word in the list
+                for (int word2_it = 0; word2_it < NUM_WORDS; word2_it++) {
+                    if (strcmp(words[word2_it], xor_str) == 0 && 
+                        //if xor_str is the same as words[word_it], then it was xor'd against 0000... and tells us nothing
+                        strcmp(xor_str, words[word_it]) != 0 &&
+                        //if the word is sufficiently short, it's probably a coincidence
+                        word_length[word2_it] >= SMALL_WORD_THRESH
+                    ) {
+                        lowercase = true;
+                        printf("%s: word found: %s; xor'd against: %s\n",
+                            xor_desc[xor_it], xor_str, words[word_it]
+                        );
+                    } else if (strcmp(Words[word2_it], Xor_Str) == 0 &&
+                        strcmp(Xor_Str, Words[word_it]) != 0 &&
+                        word_length[word2_it] >= SMALL_WORD_THRESH
+                    ) {
+                        lowercase = false;
+                        printf("%s: word found: %s; xor'd against: %s\n",
+                            xor_desc[xor_it], Xor_Str, Words[word_it]
+                        );
+                    }
                 }
             }
         }
