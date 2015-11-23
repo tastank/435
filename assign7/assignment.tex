@@ -17,6 +17,9 @@
 
     %1
     \item
+        In the RSA cryptosystem, $de\equiv 1 \pmod {(p-1)(q-1)}$.~Thus, given $p$, $q$, and $d$ or $e$, we can easily find the missing value.~
+        First, we calculate $(p-1)(q-1) = (19-1)(29-1) = 18\times28 = 504$.~From here, we must simply calculate the modular inverse of $e = 17$ to find $d$.~
+        Because this is a lengthy process and we've been over it in class before (using the Extended Euclidean Algorithm), I won't elaborate on how it is found, but this inverse is 89.
 
     %2
     \item
