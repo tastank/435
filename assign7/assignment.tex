@@ -28,14 +28,41 @@
             %knowing nothing about the messages themselves, I'm guessing this question is essentially ceil(log_2(132)) = 8, to give each message a different binary number
             \item
                 To uniquely specify 132 elements, we need at least 8 binary digits; $2^7=128$, $2^8=256$.
+            \item
+            \item
+                $143 = 11 \times 13$, 
+                So $p$ and $q$ are 11 and 13.~
+                This means
+                $$(p-1)(q-1) = 10 * 12 = 120$$
+                $$ed \equiv 1 \pmod {120}$$
+                $$d = e^{-1} \pmod {120}$$
+                $$d = 11$$
+                This can be confirmed: $11 \times 11 = 121 \equiv 1 \pmod {120}$.
+            \item
+                $$c = M^e \pmod {120} = 5^{11} \pmod {120}$$
+                $$ = (5^3)^3 \times 5^2 \pmod {120}$$
+                $$ = 5^3 \times 5^2 \pmod {120}$$
+                $$ = 5 \times 5^2 \pmod {120}$$
+                $$ = 5$$
+                And if we decrypt it, we know we will get 5 again, since in this special case the decryption function is the same as the encryption function.
 
         \end{enumerate}
 
     %3
     \item
+        $K$, the common key calculated by Alex and Bob, is equal to $a^{xy}\pmod {p} = 7^{xy} \pmod {71}$.~
+        Because 7 is a primitive root for $\mathbb{Z}^*_{71}$ we have $7^{70} \equiv 1 \pmod {71}$.
+        So the question is now asking for two factorisations of 70.~
+        Therefore, $(x,y) = {(7, 10), (2, 35)}$.
 
     %4
     \item
+        \begin{enumerate}
+            \item
+                8 is the largest primitive root for $\mathbb{Z}^*_{11}$.~ %TODO: need to prove!
+            \item
+                $K$ is equal to $8^{xy} \pmod {11} = 8^{5 \times 3} \pmod {11} = 10$.
+        \end{enumerate}
 
 
 \end{enumerate}
