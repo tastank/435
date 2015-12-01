@@ -1,0 +1,43 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[margin=3cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{mathtools}
+\usepackage{verbatim}
+\begin{document}
+
+\pagestyle{fancy}
+\lhead{Tyler Ayrton Stank}
+\chead{Assignment}
+\rhead{\today}
+
+\begin{enumerate}
+
+    %1
+    \item
+        In the RSA cryptosystem, $de\equiv 1 \pmod {(p-1)(q-1)}$.~Thus, given $p$, $q$, and $d$ or $e$, we can easily find the missing value.~
+        First, we calculate $(p-1)(q-1) = (19-1)(29-1) = 18\times28 = 504$.~From here, we must simply calculate the modular inverse of $e = 17$ to find $d$.~
+        Because this is a lengthy process and we've been over it in class before (using the Extended Euclidean Algorithm), I won't elaborate on how it is found, but this inverse is 89.
+
+    %2
+    \item
+        \begin{enumerate}
+            %2a
+            %knowing nothing about the messages themselves, I'm guessing this question is essentially ceil(log_2(132)) = 8, to give each message a different binary number
+            \item
+                To uniquely specify 132 elements, we need at least 8 binary digits; $2^7=128$, $2^8=256$.
+
+        \end{enumerate}
+
+    %3
+    \item
+
+    %4
+    \item
+
+
+\end{enumerate}
+
+\end{document}
